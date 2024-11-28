@@ -41,8 +41,8 @@ services:
       MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD} # администраторский пароль
     ports:
       - "3307:3306"
-    volumes:
-      - ../laravel/db:/var/lib/mysql
+    # volumes:
+    #   - ../laravel/db:/var/lib/mysql
     # мы можем создать для контейнеров внутреннюю сеть
     networks:
       - app-network
