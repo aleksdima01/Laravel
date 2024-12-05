@@ -23,7 +23,7 @@ services:
       dockerfile: Dockerfile
     image: myapp/php # имя будущего образа
     container_name: application # имя контейнера после запуска
-    tty: true
+    #tty: true
     volumes:
       - ../laravel/homeworks:/data/mysite.local
     # мы можем создать для контейнеров внутреннюю сеть
