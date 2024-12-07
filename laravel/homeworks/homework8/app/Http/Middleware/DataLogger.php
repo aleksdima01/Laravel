@@ -20,19 +20,18 @@ class DataLogger
         // $this->start_time = microtime(true);
         return $next($request);
     }
-    public function terminate(Request $request, Response $response): void
+    public function terminate(Request $request, Response $response)
     {
-        echo "jashfdkjlash";
-        // if (env('API_DATALOGGER', true)) {
-        $endTime = microtime(true);
-        $log = new Log();
-        $log->time = gmdate('Y-m-d M:i:s');
-        $log->duration = number_format($endTime - LARAVEL_START, 3);
-        $log->ip = $request->ip();
-        $log->url = $request->fullUrl();
-        $log->method = $request->method();
-        $log->input = $request->getContent();
-        $log->save();
-        //     }
+        if (env('API_DATALOGGER', true)) {
+            $endTime = microtime(true);
+            $log = new Log();
+            $log->time = date('Y-m-d H:i:s');
+            $log->duration = number_format($endTime - LARAVEL_START, 3);
+            $log->ip = $request->ip();
+            $log->url = $request->fullUrl();
+            $log->method = $request->method();
+            $log->input = $request->getContent();
+            $log->save();
+        }
     }
 }

@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('logs', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->dateTime('time');
-            $table->integer('duration');
+            $table->float('duration');
             $table->string('ip', 100)->nullable();
             $table->string('url')->nullable();
             $table->string('method', 10)->nullable();
