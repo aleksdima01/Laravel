@@ -15,6 +15,7 @@ Route::get('/news/create', function () {
     $news->title = 'Test new title';
     $news->body = 'Test new body';
     $news->save();
+    echo storage_path();
     return $news;
 });
 
