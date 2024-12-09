@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Middleware\DataLogger;
+use App\Jobs\ClearCache;
+use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
@@ -13,6 +15,9 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware) {
         $middleware->append(DataLogger::class);
+    })
+    ->withSchedule(function (Schedule $schedule) {
+        $schedule->job(ClearCache::class)->everyMinute();
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //
