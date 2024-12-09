@@ -22,6 +22,8 @@ RUN apt-get update && apt-get install -y zip \
 
 RUN docker-php-ext-install mysqli pdo pdo_mysql
 
+RUN curl -fsSL https://deb.nodesource.com/setup_22.x  | bash 
+RUN apt-get install -y nodejs
 
 # Add user for laravel application
 WORKDIR /data/mysite.local
