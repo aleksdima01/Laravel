@@ -19,9 +19,9 @@ class CategoriesWidget extends AbstractWidget
             'text' => "Кол-во категорий: {$count}",
             'button' => [
                 'text' => 'Категории',
-                'link' => '',
+                'link' => '/admin/categories',
             ],
-            'image' => '1.png',
+            'image' => 'category.jpg',
         ]));
     }
     public function shouldBeDisplayed()

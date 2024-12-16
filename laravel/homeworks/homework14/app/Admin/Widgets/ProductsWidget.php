@@ -19,9 +19,9 @@ class ProductsWidget extends AbstractWidget
             'text' => "Кол-во продуктов: {$count}",
             'button' => [
                 'text' => 'Продукты',
-                'link' => '',
+                'link' => '/admin/products',
             ],
-            'image' => '1.png',
+            'image' => 'products.jpg',
         ]));
     }
     public function shouldBeDisplayed()
